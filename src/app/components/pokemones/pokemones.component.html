@@ -1,0 +1,19 @@
+<!-- Agregamos una estructura a nuestro html-->
+<div class="container">
+    <div class="row">
+        <!--ngFor nos deja iterar como un for en html-->
+        <div class="col-md-4" *ngFor="let pokemon of Pokemones.results">
+            <!--Agremos la card dentro de nuestro container-->
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <!--hacemos interpolacion con la api-->
+                  <h5 class="card-title">{{pokemon.name}}</h5>
+                  <p class="card-text">{{pokemon.url}}</p>
+                  <!--Agregamos un evento click para cambiar de pagina-->
+                  <a class="btn btn-primary" (click)="showPokemones(pokemon.name)">Ver Pokemones</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
